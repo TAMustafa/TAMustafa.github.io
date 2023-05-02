@@ -26,7 +26,7 @@ description: >- # used by seo meta and the atom feed
   A blog to document my progress in becoming a Unity game developer.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: "https://kroete.io/"
+url: "https://tamustafa.github.io/"
 
 github:
   username: TAMustafa
@@ -80,7 +80,7 @@ theme_mode: # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: /assets/Tarek.jpg
 
 # boolean type, the global switch for TOC in posts.
 toc: true
