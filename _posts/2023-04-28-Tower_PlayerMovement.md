@@ -25,19 +25,19 @@ The following packages need to be installed from the Unity Registry.
 Using ProBuilder I created a cube, scaled it down and used it as a platform. Then I added some custom shapes as obstacles for the player.
 For the player I used a simple capsule and for the target a sphere.
 
-![Level Overview](/assets/Overview.png){: w="700" h="400" }
+![Level Overview](/assets/img/Overview.png){: w="700" h="400" }
 
 ## Creating a NavMesh
 
 In order to apply AI Navigation needed for the player to find the way to the goal, I selected the platform and added the **NavMeshSurface** component.
 
-![NavMesh Surface](/assets/NavMesh.png)
+![NavMesh Surface](/assets/img/NavMesh.png)
 
 ## Creating an Agent
 
 The capsule is used as player and for it to know its way around the NavMesh I added a Nav Mesh Agent to it.
 
-![NavMeshAgent](/assets/NavMeshAgent.png)
+![NavMeshAgent](/assets/img/NavMeshAgent.png)
 
 ## Logic to move the player and destroy it once the Target is reached
 
@@ -128,4 +128,4 @@ private Vector3 lastPosition;
 
 ## Current game preview
 
-![First Run](/assets/FirstRun.gif){: w="700" h="400" }
+![First Run](/assets/img/FirstRun.gif){: w="700" h="400" }
