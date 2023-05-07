@@ -18,15 +18,15 @@ timezone: Europe/Amsterdam
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Kroete.io # the main title
+title: I learn Unity # the main title
 
 tagline: My game development journal # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  A blog to document my progress in becoming a Unity game developer.
+  My blog to document the progress made in becoming a Unity game developer.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: "https://kroete.io/"
+url: "https://kroete.me/"
 
 github:
   username: TAMustafa
