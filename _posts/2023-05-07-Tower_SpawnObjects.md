@@ -85,4 +85,4 @@ public class ObjectEnemySpawner : MonoBehaviour
 
 ## Current game preview
 
-![Spawn Multiple Enemies](https://tamustafa.github.com/assets/img/SpawnEnemyRandom.mp4){: w="700" h="400" }
+![Spawn Multiple Enemies](/assets/img/MultiObjectSpawn.gif){: w="700" h="400" }
