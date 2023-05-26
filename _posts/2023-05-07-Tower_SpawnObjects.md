@@ -1,11 +1,11 @@
 ---
 title: Tower Defender - Part 2
-date: 2023-05-06 22:04:09 +500
+date: 2023-05-07 22:04:09 +500
 categories: [Unity, Tower Defense]
 tags: [unity, coroutine, random, spawn, c#]
 ---
 
-# Random Object Spawn
+# Random Enemy Spawn
 
 The purpose of the blog is to document my journey in building a simple Tower Defense game.
 In this _second_ part I show how I made the enemy objects randomly spawn from different areas of the platform.
@@ -26,17 +26,17 @@ For the SpawnManager I used an **empty game object** and rested it's location to
 
 With the SpawnManager and SpawnPoints in place, the next step is to create a C# script and add it to the **SpawnManager** game object.
 
-### Above the Start Function
+### Above the Start method:
 
 - System.Collections has been added since I am using **Coroutines** to spread the enemy spawn between frames.
 - Add several private variables via a [SerializedField](https://docs.unity3d.com/2023.2/Documentation/ScriptReference/SerializeField.html) to be able to change values directly in the game editor.
 
-### The Start function does the following:
+### The Start method:
 
-- I like to Spawn Enemy objects every 1-2 seconds. I could use the Update function and an **If statement** to count down to do this but the task would run every frame. In order to reduce the CPU load and be more effective, a coroutine seems to be better to do this kind of tasks.
-- **StartCoroutine** is a function and part of the coroutine. It is needed to set the custom function I wrote "SpawnObjects".
+- I like to Spawn enemy objects every 1-2 seconds. I could use the Update method and an **If statement** to count down to do this but the task would run every frame. In order to reduce the CPU load and be more effective, a coroutine seems to be better to do this kind of tasks.
+- **StartCoroutine** is a method and part of the coroutine. It is needed to set the custom method I wrote "SpawnObjects".
 
-### The IEnumerator SpawnObjects function does the following:
+### Custom function - The IEnumerator SpawnObjects:
 
 - Spawns new enemy prefabs as long the _amountToSpawn_ value is greater zero.
 - At every iteration creates a random number that is used to determine at which spawnPoint the enemy prefab is initiated.
@@ -49,9 +49,9 @@ With the SpawnManager and SpawnPoints in place, the next step is to create a C# 
 using System.Collections;
 using UnityEngine;
 
-public class ObjectEnemySpawner : MonoBehaviour
+public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject objectToSpawn;
+    [SerializeField] private GameObject enemyToSpawn;
     [SerializeField] private int amountToSpawn = 6;
     [SerializeField] private float timeBetweenSpawn = 1f;
     [SerializeField] private GameObject[] spawnPoints;
@@ -68,9 +68,9 @@ public class ObjectEnemySpawner : MonoBehaviour
             // Spawn an object at a random spawn point
             int randomIndex = Random.Range(0, spawnPoints.Length);
             GameObject spawnPoint = spawnPoints[randomIndex];
-            if (objectToSpawn != null)
+            if (enemyToSpawn != null)
             {
-                Instantiate(objectToSpawn, spawnPoint.transform.position, spawnPoint.transform.rotation);
+                Instantiate(enemyToSpawn, spawnPoint.transform.position, spawnPoint.transform.rotation);
             }
 
             // Wait for the specified time before spawning another object

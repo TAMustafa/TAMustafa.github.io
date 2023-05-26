@@ -46,28 +46,28 @@ The capsule is used as enemy and for it to know its way around the NavMesh I add
 
 With the NavMeshSurface and NavMeshAgent applied, the next step is to create a C# script and add it to the enemy (capsule).
 
-### Above the Start Function
+### Above the Start method:
 
 - UnityEngine.AI has been added to the script since it is needed for the Navigation System
 - Created private variables for the enemy, target, lastPosition and DistanceThreshold to use later in the code.
 
-### The Start function does the following:
+### The Start method:
 
 - Assign the target variable to the target GameObject (Sphere) and check if the GameObject is available.
 - Assign the NavMeshAgent Component to the enemy(capsule).
 - Tell the enemy object where it needs to go (target position)
-- Assign the enemy position to the _lastPosition_ variable. It will be used later in the _FaceDirection_ function.
+- Assign the enemy position to the _lastPosition_ variable. It will be used later in the _FaceDirection_ method.
 
-### The Update function does the following:
+### The Update method:
 
-- Calling the two custom functions I created. DestroyOnTarget and FaceDirection.
+- Calling the two custom methods I created. DestroyOnTarget and FaceDirection.
 
-### Custom Function - DestroyOnTarget:
+### Custom function - DestroyOnTarget:
 
-- The purpose of this function is to destroy the enemy GameObject once it reaches the target.
+- The purpose of this method is to destroy the enemy GameObject once it reaches the target.
 - The code checks the distance between the enemy and the target. If the enemy is closer then 0.3 units (Threshold), the condition becomes true and the enemy GameObject will be destroyed.
 
-### Custom Function - FaceDirection:
+### Custom function - FaceDirection:
 
 - Assign a new Vector3 variable _Direction_ and assign it the current position of the enemy object.
 - The if condition checks if the enemy is moving and if so, it will rotate (Z Axis is the front) the enemy to look in the direction of the movement.
@@ -78,7 +78,7 @@ With the NavMeshSurface and NavMeshAgent applied, the next step is to create a C
 using UnityEngine;
 using UnityEngine.AI;
 
-public class MoveTo : MonoBehaviour
+public class EnemyMovement : MonoBehaviour
 {
 private NavMeshAgent agent;
 private GameObject target;
