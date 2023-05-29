@@ -5,7 +5,7 @@ categories: [Unity, Tower Defense]
 tags: [unity, coroutine, random, spawn, c#]
 ---
 
-# Random Enemy Spawn
+# Spawn enemies at random locations
 
 The purpose of the blog is to document my journey in building a simple Tower Defense game.
 In this _second_ part I show how I made the enemy objects randomly spawn from different areas of the platform.
@@ -26,7 +26,7 @@ For the SpawnManager I used an **empty game object** and rested it's location to
 
 With the SpawnManager and SpawnPoints in place, the next step is to create a C# script and add it to the **SpawnManager** game object.
 
-### Above the Start method:
+### Variables defined at the start
 
 - System.Collections has been added since I am using **Coroutines** to spread the enemy spawn between frames.
 - Add several private variables via a [SerializedField](https://docs.unity3d.com/2023.2/Documentation/ScriptReference/SerializeField.html) to be able to change values directly in the game editor.

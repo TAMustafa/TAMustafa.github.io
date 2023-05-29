@@ -5,18 +5,18 @@ categories: [Unity, Tower Defense]
 tags: [unity, transform, vector3, quaternion, foreach]
 ---
 
-# Close enemy detect and shoot
+# Detect and shoot at nearest enemy
 
 The purpose of the blog is to document my journey in building a simple Tower Defense game.
 In this _third_ part I show how to rotate the Tower towards and shoot at the nearest enemy.
 
 The following C# features will be covered:
 
-- Transform
-- Vector3
-- Quaternion
-- GetComponent
-- foreach
+- [Transform](https://docs.unity3d.com/2023.2/Documentation/ScriptReference/Transform.html)
+- [Vector3](https://docs.unity3d.com/2023.2/Documentation/ScriptReference/Vector3.html)
+- [Quaternion](https://docs.unity3d.com/2023.2/Documentation/ScriptReference/Quaternion.html)
+- [GetComponent](https://docs.unity3d.com/2023.2/Documentation/ScriptReference/Component.GetComponent.html)
+- [foreach](https://www.programiz.com/csharp-programming/foreach-loop)
 
 ## Tower Setup
 
@@ -31,7 +31,7 @@ With the tower being in place, the next step is to create two C# scripts.
 - One for detecting and shooting at nearby enemies
 - One that controls the bullet movement.
 
-### Above the Start method:
+### Variables defined at the start
 
 In order to select in the Unity UI what game objects are needed for this script, I created a few SerializeField's. I also defined some variables like the Tower turn speed, fire rate and range.
 
@@ -50,9 +50,7 @@ Checking 60 times or more per second if an enemy is in range in the Update metho
 ### Custom function - Shoot:
 
 - Get the pullet component.
-
 - Calls the Seek method to make the bullet follow the target.
-
 - Instantiate the bullet at the position of the Tower fire point.
 
 ### Custom function - IEnumerator UpdateEnemyInRange:

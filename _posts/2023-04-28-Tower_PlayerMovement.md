@@ -5,7 +5,7 @@ categories: [Unity, Tower Defense]
 tags: [unity, navmesh, probuilder, c#]
 ---
 
-# Enemy Movement on a NavMesh
+# Enemy movement via NavMesh
 
 The purpose of the blog is to document my journey in building a simple Tower Defense game.
 In this _first_ part I show how I made the enemy object move towards to the target using Navigation AI (NavMesh).
