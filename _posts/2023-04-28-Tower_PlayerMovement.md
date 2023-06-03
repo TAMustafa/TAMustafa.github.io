@@ -129,6 +129,6 @@ private Vector3 lastPosition;
 }
 ```
 
-## Current game preview
+## Current game progress
 
 ![First Run](/assets/img/FirstRun.gif){: w="700" h="400" }

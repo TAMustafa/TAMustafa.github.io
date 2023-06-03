@@ -213,7 +213,8 @@ public class Bullet : MonoBehaviour
             HitTarget();
             return;
         }
-        transform.Translate(dir.normalized * distanceThisFrame, Space.World);
+
+        transform.position += dir.normalized * distanceThisFrame;
 
     }
 
@@ -224,6 +225,6 @@ public class Bullet : MonoBehaviour
 }
 ```
 
-## Current game preview
+## Current game progress
 
 ![Tower rotate to enemy](/assets/img/TowerRotateAndShoot.gif){: w="700" h="400" }

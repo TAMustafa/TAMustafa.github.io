@@ -83,6 +83,6 @@ public class EnemySpawner : MonoBehaviour
 }
 ```
 
-## Current game preview
+## Current game progress
 
 ![Spawn Multiple Enemies](/assets/img/MultiObjectSpawn.gif){: w="700" h="400" }

@@ -36,7 +36,7 @@ This script will initiate a tower at the position of the mouse cursor if the cur
 
 ### The PlaceTower method does the following:
 
-- This method will initiate a Tower prefab and replaces the hoovering tower with a fixed tower.
+- This method will initiate a Tower prefab and replaces the hoovering current tower with a new tower.
 
 ### The DestroyTower method does the following:
 
@@ -52,25 +52,34 @@ public class TowerPlacement : MonoBehaviour
 {
     [SerializeField] private GameObject towerPrefab;
     [SerializeField] private LayerMask groundLayer;
+
     private GameObject currentTower;
 
-    void Update()
+    private void Update()
     {
-        // Raycast to the ground
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        HandleTowerPlacement();
+    }
+
+    private void HandleTowerPlacement()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
         RaycastHit hitInfo;
 
         if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity, groundLayer))
         {
-            // Show the tower and update its position based on the mouse position
             if (currentTower == null)
+            {
                 currentTower = Instantiate(towerPrefab, hitInfo.point, Quaternion.identity);
+            }
             else
+            {
                 currentTower.transform.position = hitInfo.point;
+            }
 
-            // Place the tower on mouse button press
             if (Mouse.current.leftButton.wasPressedThisFrame)
+            {
                 PlaceTower(hitInfo.point);
+            }
         }
         else
         {
@@ -78,14 +87,18 @@ public class TowerPlacement : MonoBehaviour
         }
     }
 
-    void PlaceTower(Vector3 position)
+    private void PlaceTower(Vector3 position)
     {
-        // Instantiate the tower at the specified position
-        GameObject newTower = Instantiate(towerPrefab, position, Quaternion.identity);
+        if (currentTower == null)
+        {
+            return;
+        }
+
+        GameObject newTower Instantiate(towerPrefab, position, Quaternion.identity);
         currentTower = newTower;
     }
 
-    void DestroyTower()
+    private void DestroyTower()
     {
         if (currentTower != null)
         {
@@ -95,5 +108,7 @@ public class TowerPlacement : MonoBehaviour
     }
 }
 ```
+
+## Current game progress
 
 ![Tower rotate to enemy](/assets/img/TowerPlacement.gif){: w="700" h="400" }
