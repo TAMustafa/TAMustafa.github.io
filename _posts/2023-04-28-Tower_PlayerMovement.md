@@ -72,7 +72,7 @@ With the NavMeshSurface and NavMeshAgent applied, the next step is to create a C
 - Assign a new Vector3 variable _Direction_ and assign it the current position of the enemy object.
 - The if condition checks if the enemy is moving and if so, it will rotate (Z Axis is the front) the enemy to look in the direction of the movement.
 
-## The complete C# code for the enemy movement
+## The complete C# code for the enemy movement script
 
 ```c#
 using UnityEngine;
@@ -129,6 +129,6 @@ private Vector3 lastPosition;
 }
 ```
 
-## Current game progress
+## Game preview
 
 ![First Run](/assets/img/FirstRun.gif){: w="700" h="400" }

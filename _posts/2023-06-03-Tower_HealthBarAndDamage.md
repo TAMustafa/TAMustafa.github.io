@@ -22,16 +22,16 @@ I have changed the _Fill_ / _Background_ color and un-ticked the Active mark, so
 
 ![UI Slider HealthBar](/assets/img/HealthBar.png){: w="700" h="400" }
 
-## Explain logic for the EnemyHealthController script:
+## Explain logic for the EnemyHealthController script
 
 This script controls the UI Slider that is placed above the Enemy prefab and changes it's value based on the damage taken.
 
-### Variables defined at the start
+### Variables defined at the start:
 
 - Total enemy health with a start value of 10. Can be adjusted in the editor.
 - A UI field to assign the UI slider too in the editor.
 
-### The InitializeHealthBar method does the following:
+### Custom Function - InitializeHealthBar:
 
 - Sets the maximum value of the health slider to the total health of the enemy.
 - Sets the slider value to the total health as well. This is used for the start of the game.
@@ -40,18 +40,18 @@ This script controls the UI Slider that is placed above the Enemy prefab and cha
 
 - Calls the custom defined UpdateHealthBarRotation method.
 
-### The UpdateHealthBarRotation method does the following:
+### Custom Function - UpdateHealthBarRotation:
 
-- This method assigns the healthBar slider rotation to the same direction as the Camera rotation. This is done so the health Slider keeps in the viewer position, even if the enemy changes direction.
+- This function assigns the healthBar slider rotation to the same direction as the Camera rotation. This is done so the health Slider keeps in the viewer position, even if the enemy changes direction.
 
-### The TakeDamage method does the following:
+### Custom Function - TakeDamage:
 
 - Reduces the total health value after damage is taken.
 - Sets the Slider on active (visible) after the first hit.
 - If the total health reaches zero or below, the enemy game object will be destroyed.
 - Updates the Slider value based on updated total health value.
 
-### The complete C# code for the the tower placement script
+## The complete C# code for the the tower placement script
 
 ```c#
 using UnityEngine;
@@ -99,6 +99,6 @@ public class EnemyHealthController : MonoBehaviour
 }
 ```
 
-## Current game progress
+## Game preview
 
 ![Tower rotate to enemy](/assets/img/EnemyHealthBar.gif){: w="700" h="400" }

@@ -24,14 +24,14 @@ For the Tower I created a cylinder as _base_ and on top a capsule as the fire he
 
 ![Tower Setup](/assets/img/TowerSetup.png){: w="700" h="400" }
 
-## Explain logic for the detect and shoot script:
+## Explain logic for the detect and shoot script
 
 With the tower being in place, the next step is to create two C# scripts.
 
 - One for detecting and shooting at nearby enemies
 - One that controls the bullet movement.
 
-### Variables defined at the start
+### Variables defined at the start:
 
 In order to select in the Unity UI what game objects are needed for this script, I created a few SerializeField's. I also defined some variables like the Tower turn speed, fire rate and range.
 
@@ -61,7 +61,7 @@ Checking 60 times or more per second if an enemy is in range in the Update metho
 
 - Draws a a white wire frame sphere around the Tower to visually see the range.
 
-### The complete C# code for the the detect and shoot script
+## The complete C# code for the the detect and shoot script
 
 ```c#
 using System.Collections;
@@ -225,6 +225,6 @@ public class Bullet : MonoBehaviour
 }
 ```
 
-## Current game progress
+## Game preview
 
 ![Tower rotate to enemy](/assets/img/TowerRotateAndShoot.gif){: w="700" h="400" }

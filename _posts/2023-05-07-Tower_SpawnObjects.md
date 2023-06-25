@@ -26,7 +26,7 @@ For the SpawnManager I used an **empty game object** and rested it's location to
 
 With the SpawnManager and SpawnPoints in place, the next step is to create a C# script and add it to the **SpawnManager** game object.
 
-### Variables defined at the start
+### Variables defined at the start:
 
 - System.Collections has been added since I am using **Coroutines** to spread the enemy spawn between frames.
 - Add several private variables via a [SerializedField](https://docs.unity3d.com/2023.2/Documentation/ScriptReference/SerializeField.html) to be able to change values directly in the game editor.
@@ -43,7 +43,7 @@ With the SpawnManager and SpawnPoints in place, the next step is to create a C# 
 - Checks first that we have still objects left to spawn before running the initiate method (Null check).
 - Wait the amount specified in _timeBetweenSpawn_ before running again.
 
-## The complete C# code for the Spawn Manager
+## The complete C# code for the Spawn Manager script
 
 ```c#
 using System.Collections;
@@ -83,6 +83,6 @@ public class EnemySpawner : MonoBehaviour
 }
 ```
 
-## Current game progress
+## Game preview
 
 ![Spawn Multiple Enemies](/assets/img/MultiObjectSpawn.gif){: w="700" h="400" }

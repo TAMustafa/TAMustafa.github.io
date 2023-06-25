@@ -16,11 +16,11 @@ The following Unity / C# features will be covered:
 - [Layermask](https://docs.unity3d.com/2023.2/Documentation/Manual/layermask-set.html)
 - [Input System](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.6/manual/index.html)
 
-## Explain logic for the tower placement script:
+## Explain logic for the tower placement script
 
 This script will initiate a tower at the position of the mouse cursor if the cursor is above specified Layer (ground).
 
-### Variables defined at the start
+### Variables defined at the start:
 
 - A prefab UI reference to assign the tower game object that will be initiated at mouse click.
 - A layer mask UI reference to assign specify what the ground is.
@@ -34,15 +34,15 @@ This script will initiate a tower at the position of the mouse cursor if the cur
 - If the mouse button is clicked on a ground layer, a Tower will be initiated.
   If the mouse is hoovering away from the "Ground" layer the floating Tower will be destroyed.
 
-### The PlaceTower method does the following:
+### Custom Function - PlaceTower:
 
-- This method will initiate a Tower prefab and replaces the hoovering current tower with a new tower.
+- This function will initiate a Tower prefab and replaces the hoovering current tower with a new tower.
 
-### The DestroyTower method does the following:
+### Custom Function - DestroyTower:
 
-- This method will destroy the Tower game object.
+- This function will destroy the Tower game object.
 
-### The complete C# code for the the tower placement script
+## The complete C# code for the the tower placement script
 
 ```c#
 using UnityEngine;
@@ -109,6 +109,6 @@ public class TowerPlacement : MonoBehaviour
 }
 ```
 
-## Current game progress
+## Game preview
 
 ![Tower rotate to enemy](/assets/img/TowerPlacement.gif){: w="700" h="400" }
