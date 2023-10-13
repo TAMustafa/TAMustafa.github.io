@@ -18,9 +18,9 @@ timezone: Europe/Amsterdam
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: I learn Unity # the main title
+title: Tarek's # the main title
 
-tagline: My game development journal # it will display as the sub-title
+tagline: (VR)game development journal # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   My blog to document the progress made in becoming a Unity game developer.
