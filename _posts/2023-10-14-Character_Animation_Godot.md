@@ -108,7 +108,7 @@ Updates the state 60 times per second. Physics Process should be used for anythi
 
 ## The complete GDScript code
 
-```cs
+```GDScript
 extends CharacterBody3D
 
 @onready var armature = $Armature
