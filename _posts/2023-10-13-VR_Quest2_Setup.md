@@ -7,7 +7,7 @@ tags: [vr, godot, quest2, openxr]
 
 # VR - Quest2 / OpenXR setup in Godot
 
-The purpose of the blog is to document my journey in becoming a XR game developer.
+The purpose of the blog is to document my journey in becoming a (XR) game developer using the Godot engine.
 I created this infographic as a reference when setting up a new VR Project in Godot.
 
 Here are links to useful manuals and documentation for more detailed information:
